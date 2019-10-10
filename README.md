@@ -14,11 +14,9 @@ Add ability to define custom javascript code which is executed on Sitecore Forms
 * Publish `Sc.FormsCustomSCripts` project.   
 * Go to {your-sitecore-instance}/unicorn.aspx and sync `Foundation.Sc.FormsCustomScripts` project.
 
-<aside class="notice">
-Warning: installation overwrites Sitecore platform items:  
-`/sitecore/templates/System/Forms/Fields/Button`  
-`/sitecore/system/Settings/Forms/Field Types/Structure/Submit Button`  
+> Warning: installation overwrites Sitecore platform items:  
+> `/sitecore/templates/System/Forms/Fields/Button`  
+> `/sitecore/system/Settings/Forms/Field Types/Structure/Submit Button`  
+> and Sitecore platform file:  
+> `\Views\FormBuilder\FieldTemplates\Button.cshtml`
 
-and Sitecore platform file:  
-\Views\FormBuilder\FieldTemplates\Button.cshtml
-</aside>
