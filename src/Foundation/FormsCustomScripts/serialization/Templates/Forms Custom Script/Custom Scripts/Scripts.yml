@@ -1,0 +1,14 @@
+﻿---
+ID: "fc297a35-62b1-4147-ae8a-a55e12d24c27"
+Parent: "65ebeab3-8387-4ffd-904b-a8e8e1ff2583"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/Foundation/Forms Custom Script/Custom Scripts/Scripts
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20191008T174623Z

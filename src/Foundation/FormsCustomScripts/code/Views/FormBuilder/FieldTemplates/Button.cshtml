@@ -1,0 +1,52 @@
+﻿@using Sitecore.ExperienceForms.Mvc.Constants
+@model Sc.FormsCustomScripts.Models.CustomScriptButtonViewModel
+
+@{
+    var cssClass = Model.CssClass;
+    if (Model.NavigationStep < 0)
+    {
+        var classes = Model.CssClass.Split(' ');
+        if (!classes.Contains("cancel", StringComparer.OrdinalIgnoreCase))
+        {
+            if (!string.IsNullOrEmpty(Model.CssClass))
+            {
+                cssClass += " ";
+            }
+
+            cssClass += "cancel";
+        }
+    }
+}
+
+<input value="@Html.DisplayTextFor(t => Model.Title)" type="submit" class="@cssClass" name="@Html.Name(Model.ItemId)" data-sc-field-key="@Model.ConditionSettings.FieldKey" />
+@Html.Hidden(AttributeNames.NavigationButtons, Model.ItemId)
+@Html.Hidden(Model.ItemId, Model.NavigationStep)
+
+<script type="text/javascript">
+    (function ($) {
+        var $inputEl = $("input[name='@Html.Name(Model.ItemId)']");
+        var $formEl = $inputEl.closest('form');
+        if ($inputEl.length == 0 || $formEl.length == 0) {
+            return;
+        }
+
+        $inputEl.click(function () {
+            $("input[type=submit]", $formEl).removeAttr("clicked");
+            $(this).attr("clicked", "true");
+        });
+
+        @if (Sitecore.Context.Site.Name != "shell")
+        {
+            if (!string.IsNullOrWhiteSpace(Model.FormSubmitScript)) 
+            { 
+                <text>
+                    $formEl.on("submit", function () {
+                        if ($inputEl.attr('clicked')) {
+                            @Html.Raw(Model.FormSubmitScript)
+                        }
+                    });
+                </text>
+            }
+        }
+	})(jQuery)
+</script>
