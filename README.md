@@ -1,6 +1,6 @@
 # Sc.FormsCustomScripts
 
-Add ability to define custom javascript code which is executed on Sitecore Forms submit.
+Define custom javascript code which is executed on Sitecore Forms submit.
 
 ![Forms Custom Scripts](documentation/forms-custom-scripts.gif)
 
