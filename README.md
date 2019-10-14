@@ -1,6 +1,7 @@
 # Sc.FormsCustomScripts
 
 Define custom javascript code which is executed on Sitecore Forms submit.
+Details: https://smartsitecore.com/en/call-custom-javascript-on-sitecore-forms-submit/
 
 ![Forms Custom Scripts](documentation/forms-custom-scripts.gif)
 
